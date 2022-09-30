@@ -4,6 +4,7 @@ const getAllProfessional = async (req, res, next) => {
   try {
     const allProfessional = await pool.query(`SELECT 
                                                 name
+                                                ,p.prof_id
                                                 ,last_name
                                                 ,n_matric
                                                 ,specialization
