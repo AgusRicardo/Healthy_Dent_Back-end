@@ -1,8 +1,10 @@
 const pool = require('../db');
 
+
 const loginUser = async(req, res, next) => {
   const {email_user, password} = req.body
 
+  
   const errors = validationResult( req );
   
   if (!errors.isEmpty()) {
@@ -29,5 +31,5 @@ const loginUser = async(req, res, next) => {
 };
 
 module.exports = {
-  createUser
+  loginUser
 }

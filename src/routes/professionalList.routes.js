@@ -5,6 +5,6 @@ const router = Router();
 
 router.get('/search', getAllProfessional)
 
-router.get('/search/10', getProfessional)
+router.get('/professional/:id', getProfessional)
 
 module.exports = router;

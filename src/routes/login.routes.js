@@ -4,7 +4,7 @@ const { check } = require('express-validator');
 
 const router = Router();
 
-router.post(
+router.get(
   '/login',
   [
     check('email_user', 'El email es obligatorio').isEmail(),

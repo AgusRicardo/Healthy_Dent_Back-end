@@ -26,7 +26,8 @@ const createUser = async(req, res, next) => {
                   prepaid_id
                 ]);
     res.status(201).json(result.rows[0]);
-
+    res.send('Usuario creado')
+    
   } catch (error) {
     next(error)
   }

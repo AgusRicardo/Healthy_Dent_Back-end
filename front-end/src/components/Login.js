@@ -31,7 +31,7 @@ export const Login = () => {
           <input type="password" name="password" id="" onChange={handleChange}/>
         <br />
         <br />
-          <input type="submit" onClick={ () => setUser({ id: 123, email: 'juan@gmail.com', password: 'juan123'})}/>
+          <input type="submit" onClick={ () => setUser({ id: 123, email: state.email, password: state.password})}/>
       </form>
       <pre>
         {
