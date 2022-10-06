@@ -1,15 +1,18 @@
 const { Router } = require('express');
 const { loginUser } = require('../controllers/login.controller');
 const { check } = require('express-validator');
+const { loginFieldsCheck } = require('../validator/loginFieldCheck');
 
 const router = Router();
 
-router.get(
+router.post(
   '/login',
   [
     check('email_user', 'El email es obligatorio').isEmail(),
     check('password', 'El password debe tener como mínimo 6 caracteres').isLength({ min: 6 }),
   ],
-  loginUser)
+  loginFieldsCheck,
+  loginUser
+  )
 
   module.exports = router;

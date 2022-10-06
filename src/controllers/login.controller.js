@@ -1,32 +1,38 @@
 const pool = require('../db');
+const { sign } = require('jsonwebtoken')
+const { validationResult } = require('express-validator')
+
 
 
 const loginUser = async(req, res, next) => {
-  const {email_user, password} = req.body
+  const SECRET = pool.options.secret;
+  let user = req.body
 
-  
   const errors = validationResult( req );
-  
+
   if (!errors.isEmpty()) {
     return res.status(400).json({
       errors: errors.mapped()
     });
   }
-  
-  try {
-    const result = await pool.query(`SELECT email_user
-                                        ,password 
-                                      FROM "User"
-                                      WHERE email_user = 'agustin@gmail.com'
-                                      AND password = 'central4415'
-                                      `, [
-                  email_user,
-                  password
-                ]);
-    res.status(201).json(result.rows[0]);
 
+  let payload = {
+    id: user.user_id,
+    email: user.email,
+  }
+
+  try {
+    const token = await sign(payload, SECRET)
+
+    return res.status(200).cookie('token', token, { httpOnly: true }).json({
+      success: true,
+      message: 'Se ha logueado correctamente.',
+    })
   } catch (error) {
-    next(error)
+    console.log(error.message)
+    return res.status(500).json({
+      error: error.message,
+    })
   }
 };
 
