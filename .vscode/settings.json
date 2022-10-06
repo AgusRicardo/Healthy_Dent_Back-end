@@ -7,6 +7,6 @@
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
     "node_modules": true,
-    "front-end/node_modules": true,
+    "client/node_modules": true,
   }
 }

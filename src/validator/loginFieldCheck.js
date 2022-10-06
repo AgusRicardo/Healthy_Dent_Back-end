@@ -17,6 +17,7 @@ const { compare } = require('bcryptjs')
     }
 
     req.user = user.rows[0]
+    
   })
   
   module.exports={

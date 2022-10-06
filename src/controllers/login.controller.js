@@ -6,19 +6,21 @@ const { validationResult } = require('express-validator')
 
 const loginUser = async(req, res, next) => {
   const SECRET = pool.options.secret;
-  let user = req.body
+  let user = req.user
 
   const errors = validationResult( req );
 
   if (!errors.isEmpty()) {
     return res.status(400).json({
-      errors: errors.mapped()
+      errors: errors.array()
     });
   }
 
   let payload = {
     id: user.user_id,
-    email: user.email,
+    name: user.name,
+    last_name: user.last_name,
+    email: user.email_user,
   }
 
   try {
