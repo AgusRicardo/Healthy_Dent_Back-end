@@ -5,3 +5,7 @@ Proyecto del 2do año de "Desarrollo de Software". El mismo consta de una aplica
 <hr>
 
 2nd year "Software Development" project. It consists of an application for dentists, in which it currently allows you to register, log in and make an appointment with a professional.
+
+
+BD: PostgreSQL
+Server: ElephantSQL
