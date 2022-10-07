@@ -8,4 +8,7 @@ Proyecto del 2do año de "Desarrollo de Software". El mismo consta de una aplica
 
 
 BD: PostgreSQL
+<br/>
 Server: ElephantSQL
+<br/>
+<b>Integrantes: Agustín Ricardo, Nehuen Bovyn, Ariadna Garcia, Marcos Aguero</b>
