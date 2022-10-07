@@ -28,17 +28,25 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-        {isAuth ? (
+        {isAuth.status ? (
           <div style={{color: 'grey'}}>
+            <NavLink to='/register/professional' className='mx-3' style={{color: 'grey', textDecoration: 'none'}}>
+              <span>Registrate como profesional</span>
+            </NavLink>
             <NavLink to='/search' className='mx-3' style={{color: 'grey', textDecoration: 'none'}}>
               <span>Buscar profesional</span>
             </NavLink>
-            <div class="btn-group" role="group">
-              <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                Nombre del usuario
+            <div className="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" className="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://icongr.am/material/account-circle-outline.svg?size=128&color=ffffff" alt="" height="30px" width="35px" />
+                {isAuth.values.payload.name} {isAuth.values.payload.last_name }
               </button>
-              <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                <li><button className="dropdown-item" >Perfil</button></li>
+              <ul className="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <li>
+                  <NavLink to='/perfil' style={{textDecoration: 'none'}}>
+                    <button className="dropdown-item" >Perfil</button>
+                  </NavLink>
+                  </li>
                 <li><button className="dropdown-item" onClick={() => logout()}>Logout</button></li>
               </ul>
             </div>

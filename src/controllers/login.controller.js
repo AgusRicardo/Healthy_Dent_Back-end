@@ -29,6 +29,7 @@ const loginUser = async(req, res, next) => {
     return res.status(200).cookie('token', token, { httpOnly: true }).json({
       success: true,
       message: 'Se ha logueado correctamente.',
+      payload: payload
     })
   } catch (error) {
     console.log(error.message)

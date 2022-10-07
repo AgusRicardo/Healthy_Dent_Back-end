@@ -6,9 +6,11 @@ const passport = require('passport')
 
 
 const createUserRoutes = require('./routes/createUser.routes');
-const professionalListRoutes = require('./routes/professionalList.routes');
+const createProfessional = require('./routes/createProfessional.routes');
 const loginRoutes  = require('./routes/login.routes');
 const logoutRoutes = require('./routes/logout.routes');
+const professionalListRoutes = require('./routes/professionalList.routes');
+const getUserId = require('./routes/getUserId.routes');
 
 const app = express();
 
@@ -28,9 +30,12 @@ app.use(passport.initialize())
 
 // Routes
 app.use(createUserRoutes)
+app.use(createProfessional)
 app.use(loginRoutes)
-app.use(professionalListRoutes)
 app.use(logoutRoutes)
+app.use(professionalListRoutes)
+app.use(getUserId)
+
 
 
 // Erros

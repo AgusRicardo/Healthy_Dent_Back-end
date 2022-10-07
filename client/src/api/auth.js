@@ -19,3 +19,9 @@ export async function onLogout() {
 export async function getProfessional(){
   return await axios.get('http://localhost:4000/search')
 }
+
+export async function registerProfessional(registerData){
+  return await axios.post('http://localhost:4000/register/professional', registerData)
+}
+
+

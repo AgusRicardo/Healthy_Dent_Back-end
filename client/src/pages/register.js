@@ -25,7 +25,6 @@ export const Register = () => {
     e.preventDefault()
 
     try {
-      console.log(values);
       const { data } = await onRegistration(values)
       setError('')
       setSuccess(data.message)

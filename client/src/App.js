@@ -4,17 +4,21 @@ import { Login } from './pages/login'
 import { Register } from './pages/register'
 import { Search } from './pages/search'
 import { useSelector } from 'react-redux'
+import RegisterProfessional from './pages/registerProfessional'
+import { Perfil } from './pages/perfil'
+import { Turno } from './pages/turno'
 
 const PrivateRoutes = () => {
   const { isAuth } = useSelector((state) => state.authh)
+  
 
-  return <>{isAuth ? <Outlet/> : <Navigate to='/login' />}</>
+  return <>{isAuth.status ? <Outlet/> : <Navigate to='/login' />}</>
 }
 
 const RestrictedRoutes = () => {
   const { isAuth } = useSelector((state) => state.authh)
   
-  return <>{!isAuth ? <Outlet/> : <Navigate to='/search' />}</>
+  return <>{!isAuth.status ? <Outlet/> : <Navigate to='/search' />}</>
 }
 
 const App = () => {
@@ -33,6 +37,9 @@ const App = () => {
 
         <Route element={<PrivateRoutes/>}>
           <Route path='/search' element={<Search/>} />
+          <Route path='/perfil' element={<Perfil/>} />
+          <Route path='/turno' element={<Turno/>} />
+          <Route path='/register/professional' element={<RegisterProfessional/>} />
         </Route>
     </Routes>
     </BrowserRouter>

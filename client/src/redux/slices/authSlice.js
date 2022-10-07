@@ -1,28 +1,33 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const userAuthFromLocalStorage = () => {
+const UserAuthFromLocalStorage = () => {
   const isAuth = localStorage.getItem('isAuth')
 
   if (isAuth && JSON.parse(isAuth) === true) {
-    return true
+      localStorage.removeItem('isAuth') // Cuando tiras F5 no te vuelve a loguear, por el momento lo dejo asi
+  }else {
+    return false
   }
-
-  return false
 }
 
 const initialState = {
-  isAuth: userAuthFromLocalStorage(),
+  isAuth: UserAuthFromLocalStorage(),
 }
 
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    authenticateUser: (state) => {
-      state.isAuth = true
+    authenticateUser: (state, values) => {
+      state.isAuth = {
+        status: true,
+        values
+      }
     },
     unauthenticateUser: (state) => {
-      state.isAuth = false
+      state.isAuth = {
+        status: false
+      }
     },
   },
 })
