@@ -43,7 +43,7 @@ const Navbar = () => {
               </button>
               <ul className="dropdown-menu" aria-labelledby="btnGroupDrop1">
                 <li>
-                  <NavLink to='/perfil' style={{textDecoration: 'none'}}>
+                  <NavLink to='/profile' style={{textDecoration: 'none'}}>
                     <button className="dropdown-item" >Perfil</button>
                   </NavLink>
                   </li>

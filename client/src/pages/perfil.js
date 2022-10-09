@@ -45,7 +45,7 @@ export const Perfil = () => {
             <ul className="list-group list-group-flush">
               <li className="list-group-item"><b>Email:</b> {user.email_user}</li>
               <li className="list-group-item"><b>DNI:</b> {user.dni}</li>
-              <li className="list-group-item"><b>Fecha de nacimiento:</b> {user.date_birth}</li>
+              <li className="list-group-item"><b>Fecha de nacimiento:</b> {(user.date_birth).slice(0, -14)}</li>
               <li className="list-group-item"><b>Dirección:</b> {user.address_user}</li>
               <li className="list-group-item"><b>Teléfono:</b> {user.telephone}</li>
             </ul>

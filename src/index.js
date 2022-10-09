@@ -12,6 +12,7 @@ const loginRoutes  = require('./routes/login.routes');
 const logoutRoutes = require('./routes/logout.routes');
 const professionalListRoutes = require('./routes/professionalList.routes');
 const getUserId = require('./routes/getUserId.routes');
+const createTurn = require('./routes/turn.routes')
 
 const app = express();
 
@@ -36,6 +37,7 @@ app.use(loginRoutes)
 app.use(logoutRoutes)
 app.use(professionalListRoutes)
 app.use(getUserId)
+app.use(createTurn)
 
 
 
