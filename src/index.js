@@ -3,6 +3,7 @@ const morgan = require('morgan')
 const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const passport = require('passport')
+const {db} = require('./config')
 
 
 const createUserRoutes = require('./routes/createUser.routes');
@@ -45,5 +46,9 @@ app.use((err, req, res, next) => {
   })
 })
 
-app.listen(4000)
-console.log('Server on port 4000');
+app.listen(db.port || 4000)
+
+db.port ?
+console.log(`Server on ${db.port}`)
+:
+console.log(`Server on 4000`)
