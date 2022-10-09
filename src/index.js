@@ -39,7 +39,7 @@ app.use(professionalListRoutes)
 app.use(getUserId)
 app.use(createTurn)
 
-
+app.get('/', (req, res) => res.send('Esto anda?'))
 
 // Erros
 app.use((err, req, res, next) => {
