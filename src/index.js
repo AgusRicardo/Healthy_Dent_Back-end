@@ -48,6 +48,12 @@ app.use((err, req, res, next) => {
 
 app.listen(db.port || 4000)
 
+console.log(`DB ${db.user}`)
+console.log(`DB ${db.password}`)
+console.log(`DB ${db.host}`)
+console.log(`DB ${db.database}`)
+console.log(`DB ${db.secret}`)
+
 db.port ?
 console.log(`Server on ${db.port}`)
 :
