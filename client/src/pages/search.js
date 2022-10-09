@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import Layout from '../components/Layout'
+
 
 
 
@@ -8,7 +9,6 @@ import Layout from '../components/Layout'
 export const Search = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [state, setState] = useState()
-  
   
   useEffect(() => {
     fetch("http://localhost:4000/search")
@@ -31,13 +31,13 @@ export const Search = () => {
   return (
       <Layout className="container">
         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-          <div class="input-group-lg" style={{margin: '10px', padding: '10px'}}>
+          <div className="input-group-lg" style={{margin: '10px', padding: '10px'}}>
             <input type="search" class="form-control" placeholder="Especialidad" aria-label="Recipient's username" aria-describedby="button-addon2"/>
           </div>
-          <div class="input-group-lg" style={{margin: '10px', padding: '10px'}}>
+          <div className="input-group-lg" style={{margin: '10px', padding: '10px'}}>
             <input type="search" class="form-control" placeholder="Nombre del profesional" aria-label="Recipient's username" aria-describedby="button-addon2"/>
           </div>
-          <div class="input-group-lg" style={{margin: '10px', padding: '10px'}}>
+          <div className="input-group-lg" style={{margin: '10px', padding: '10px'}}>
             <input type="search" class="form-control" placeholder="Obra social" aria-label="Recipient's username" aria-describedby="button-addon2"/>
           </div>
           <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
@@ -45,16 +45,16 @@ export const Search = () => {
           </div>
         </div>
         <section style={{display: "flex", flexDirection: 'row'}}>
-          <ul class="nav flex-column">
+          <ul className="nav flex-column">
             <h5>Filtrar</h5>
-            <li class="nav-item">
-              <p class="nav-link" aria-current="page">Filtro 1</p>
+            <li className="nav-item">
+              <p className="nav-link" aria-current="page">Filtro 1</p>
             </li>
-            <li class="nav-item">
-              <p class="nav-link">Filtro 2</p>
+            <li className="nav-item">
+              <p className="nav-link">Filtro 2</p>
             </li>
-            <li class="nav-item">
-              <p class="nav-link">Filtro 3</p>
+            <li className="nav-item">
+              <p className="nav-link">Filtro 3</p>
             </li>
           </ul>
           <div style={{display: "flex", flexDirection: 'column'}}>
@@ -72,8 +72,8 @@ export const Search = () => {
                         <p className="card-title">Mat. {prof.n_matric}</p>
                         <p className="card-title">{prof.specialization}</p>
                         <p className="card-text">HORARIOS</p>
-                        <NavLink to='/turno' style={{textDecoration: 'none'}}>
-                          <button className='btn btn-primary'>Solicitar turno</button>
+                        <NavLink to='/turn' style={{textDecoration: 'none'}}>
+                            <button className='btn btn-primary'>Solicitar Turno</button>
                         </NavLink>
                       </div>
                     </div>
