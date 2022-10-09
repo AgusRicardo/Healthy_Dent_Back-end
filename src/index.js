@@ -25,6 +25,7 @@ const corsOptions ={
 // Middlewares
 app.use(morgan('dev'));
 app.use(cors(corsOptions));
+app.use(express.static('./client/public'))
 app.use(express.json());
 app.use(cookieParser())
 app.use(passport.initialize())
