@@ -4,7 +4,7 @@ const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const passport = require('passport')
 const {db} = require('./config')
-const path = require('path')
+// const path = require('path')
 
 const createUserRoutes = require('./routes/createUser.routes');
 const createProfessional = require('./routes/createProfessional.routes');
@@ -40,10 +40,8 @@ app.use(professionalListRoutes)
 app.use(getUserId)
 app.use(createTurn)
 
+app.get('/', (req, res) => res.send('Esto anda?'))
 
-app.get('/', (req, res) => {
-  res.send('Esto funciona')
-})
 
 // if (process.env.NODE_ENV === 'production') {
 //   console.log('Llega aca');
