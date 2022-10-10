@@ -21,7 +21,7 @@ export async function getProfessional(){
 }
 
 export async function registerProfessional(registerData){
-  return await axios.post('https://healthydent-production.up.railway.app//register/professional', registerData)
+  return await axios.post('https://healthydent-production.up.railway.app/register/professional', registerData)
 }
 
 
