@@ -40,13 +40,13 @@ app.use(professionalListRoutes)
 app.use(getUserId)
 app.use(createTurn)
 
-app.use(express.static('client/build'))
 
 app.get('/', (req, res) => {
   res.send('Esto funciona')
 })
 
 if (process.env.NODE_ENV === 'production') {
+  console.log('Llega aca');
   app.use(express.static('client/build'))
 
   app.get('*', (req, res) => {
