@@ -4,7 +4,7 @@ const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const passport = require('passport')
 const {db} = require('./config')
-// const path = require('path')
+
 
 const createUserRoutes = require('./routes/createUser.routes');
 const createProfessional = require('./routes/createProfessional.routes');
@@ -42,18 +42,7 @@ app.use(createTurn)
 
 app.get('/', (req, res) => res.send('Esto anda?'))
 
-
-// if (process.env.NODE_ENV === 'production') {
-//   console.log('Llega aca');
-//   app.use(express.static('client/build'))
-
-//   app.get('*', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-//   })
-// }
-
-
-// Errors
+// Erros
 app.use((err, req, res, next) => {
   return res.json({
     message: err.message
