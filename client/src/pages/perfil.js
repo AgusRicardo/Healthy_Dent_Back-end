@@ -15,7 +15,6 @@ export const Perfil = () => {
     .then((res) => {
       setUser(res);
       setIsLoading(false); 
-      console.log(user);
     });
   }, [isLoading]);
   
