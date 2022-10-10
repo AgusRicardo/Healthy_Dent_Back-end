@@ -15,7 +15,7 @@ const logoutRoutes = require('./routes/logout.routes');
 const professionalListRoutes = require('./routes/professionalList.routes');
 const getUserId = require('./routes/getUserId.routes');
 const createTurn = require('./routes/turn.routes')
-
+const PORT = process.env.PORT; 
 
 const app = express();
 
@@ -44,8 +44,6 @@ app.use(professionalListRoutes)
 app.use(getUserId)
 app.use(createTurn)
 
-app.get('/', (req, res) => res.send('Esto anda?'))
-
 
 // Erros
 app.use((err, req, res, next) => {
@@ -54,7 +52,7 @@ app.use((err, req, res, next) => {
   })
 })
 
-app.listen(db.port || 4000)
+app.listen(PORT || 4000)
 
 console.log("Host:", db.host)
 console.log("User:", db.user)
@@ -66,6 +64,6 @@ console.log("Secret:", db.secret)
 
 
 db.port ?
-console.log(`Server on ${db.port}`)
+console.log(`Server on ${PORT}`)
 :
 console.log(`Server on 4000`)
