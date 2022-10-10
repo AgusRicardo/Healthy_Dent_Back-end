@@ -45,14 +45,14 @@ app.get('/', (req, res) => {
   res.send('Esto funciona')
 })
 
-if (process.env.NODE_ENV === 'production') {
-  console.log('Llega aca');
-  app.use(express.static('client/build'))
+// if (process.env.NODE_ENV === 'production') {
+//   console.log('Llega aca');
+//   app.use(express.static('client/build'))
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  })
-}
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+//   })
+// }
 
 
 // Errors
