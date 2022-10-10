@@ -63,7 +63,7 @@ console.log("Name:", db.database)
 console.log("Secret:", db.secret)
 
 
-db.port ?
+PORT ?
 console.log(`Server on ${PORT}`)
 :
 console.log(`Server on 4000`)
