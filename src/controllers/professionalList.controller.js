@@ -13,6 +13,7 @@ const getAllProfessional = async (req, res, next) => {
                                               ON u.user_id = p.user_id;
                                               `)
     res.json(allProfessional.rows)
+    console.log(allProfessional.rows);
   } catch (error) {
     next(error)
   }
