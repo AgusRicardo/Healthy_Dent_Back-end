@@ -40,6 +40,7 @@ app.use(professionalListRoutes)
 app.use(getUserId)
 app.use(createTurn)
 
+app.use(express.static('client/build'))
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
 
