@@ -20,15 +20,15 @@ const createTurn = require('./routes/turn.routes')
 const app = express();
 
 
-const corsOptions ={
-    origin:'http://localhost:3000', 
-    credentials:true,            
-    optionSuccessStatus:200
-}
+// const corsOptions ={
+//     origin:'http://localhost:3000', 
+//     credentials:true,            
+//     optionSuccessStatus:200
+// }
 
 // Middlewares
 app.use(morgan('dev'));
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.static(join(__dirname, '../client/build')))
 app.use(express.json());
 app.use(cookieParser())
@@ -55,6 +55,14 @@ app.use((err, req, res, next) => {
 })
 
 app.listen(db.port || 4000)
+
+console.log("Host:", db.host)
+console.log("User:", db.user)
+console.log("Password:", db.password)
+console.log("Port:", db.port)
+console.log("DB_Port:", db.db_port)
+console.log("Name:", db.database)
+console.log("Secret:", db.secret)
 
 
 db.port ?
