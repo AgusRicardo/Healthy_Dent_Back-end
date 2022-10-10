@@ -9,7 +9,8 @@ export const Perfil = () => {
 
   
   useEffect(() => {
-    fetch(`http://localhost:4000/user/${isAuth.values.payload.id}`)
+    // fetch(`http://localhost:4000/user/${isAuth.values.payload.id}`)
+    fetch(`https://healthydent-production.up.railway.app/user/${isAuth.values.payload.id}`)
     .then((response) => response.json())
     .then((res) => {
       setUser(res);

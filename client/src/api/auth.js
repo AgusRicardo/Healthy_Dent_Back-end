@@ -3,26 +3,25 @@ axios.defaults.withCredentials = true
 
 export async function onRegistration(registrationData) {
   return await axios.post(
-    'http://localhost:4000/register',
+    'https://healthydent-production.up.railway.app/register',
     registrationData
   )
 }
 
 export async function onLogin(loginData) {
-  // return await axios.post('http://localhost:4000/login', loginData)
   return await axios.post('https://healthydent-production.up.railway.app/login', loginData)
 }
 
 export async function onLogout() {
-  return await axios.get('http://localhost:4000/logout')
+  return await axios.get('https://healthydent-production.up.railway.app/logout')
 }
 
 export async function getProfessional(){
-  return await axios.get('http://localhost:4000/search')
+  return await axios.get('https://healthydent-production.up.railway.app/search')
 }
 
 export async function registerProfessional(registerData){
-  return await axios.post('http://localhost:4000/register/professional', registerData)
+  return await axios.post('https://healthydent-production.up.railway.app/professional', registerData)
 }
 
 
