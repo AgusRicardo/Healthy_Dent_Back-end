@@ -11,7 +11,8 @@ export const Search = () => {
   const [state, setState] = useState()
   
   useEffect(() => {
-    fetch("http://localhost:4000/search")
+    // fetch("http://localhost:4000/search")
+    fetch("https://healthydent-production.up.railway.app/search")
       .then((response) => response.json())
       .then((res) => {
         setState(res); 

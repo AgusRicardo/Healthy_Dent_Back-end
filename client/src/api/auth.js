@@ -9,7 +9,8 @@ export async function onRegistration(registrationData) {
 }
 
 export async function onLogin(loginData) {
-  return await axios.post('http://localhost:4000/login', loginData)
+  // return await axios.post('http://localhost:4000/login', loginData)
+  return await axios.post('https://healthydent-production.up.railway.app/login', loginData)
 }
 
 export async function onLogout() {
