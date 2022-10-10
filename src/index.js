@@ -4,6 +4,9 @@ const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const passport = require('passport')
 const {db} = require('./config')
+const {dirname, join} = require('path')
+const path = require('path')
+const { fileURLToPath } = require('url')
 
 
 const createUserRoutes = require('./routes/createUser.routes');
@@ -14,7 +17,16 @@ const professionalListRoutes = require('./routes/professionalList.routes');
 const getUserId = require('./routes/getUserId.routes');
 const createTurn = require('./routes/turn.routes')
 
+
 const app = express();
+// if (process.env.NODE_ENV === 'production') {
+  
+//   app.use(express.static('client/build'))
+
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+//   })
+// }
 
 const corsOptions ={
     origin:'http://localhost:3000', 
@@ -25,7 +37,8 @@ const corsOptions ={
 // Middlewares
 app.use(morgan('dev'));
 app.use(cors(corsOptions));
-// app.use(express.static('./client/public'))
+app.use(express.static(join(__dirname, '../client/build')))
+// console.log(path.resolve(__dirname, '../client/build'));
 app.use(express.json());
 app.use(cookieParser())
 app.use(passport.initialize())
