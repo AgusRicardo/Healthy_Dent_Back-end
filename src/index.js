@@ -19,11 +19,16 @@ const PORT = process.env.PORT;
 
 const app = express();
 
+const corsOptions ={
+  origin:'http://localhost:3000', 
+  credentials:true,            
+  optionSuccessStatus:200
+}
 
 // Middlewares
 app.use(morgan('dev'));
-app.use(cors());
-app.use(express.static(join(__dirname, '../client/build')))
+app.use(cors(corsOptions));
+// app.use(express.static(join(__dirname, '../client/build')))
 app.use(express.json());
 app.use(cookieParser())
 app.use(passport.initialize())
