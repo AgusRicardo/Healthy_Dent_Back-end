@@ -15,7 +15,6 @@ const logoutRoutes = require('./routes/logout.routes');
 const professionalListRoutes = require('./routes/professionalList.routes');
 const getUserId = require('./routes/getUserId.routes');
 const createTurn = require('./routes/turn.routes');
-const deleteUser = require('./routes/deleteUser.routes');
 const PORT = process.env.PORT; 
 
 const app = express();
@@ -43,7 +42,6 @@ app.use(logoutRoutes)
 app.use(professionalListRoutes)
 app.use(getUserId)
 app.use(createTurn)
-app.use(deleteUser)
 
 
 // Erros
