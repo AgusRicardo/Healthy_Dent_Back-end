@@ -22,7 +22,7 @@ const app = express();
 
 const corsOptions ={
   // origin:'http://localhost:3000', 
-  origin:'https://client-agustinricardo1.vercel.app/', 
+  origin:'https://healthydent.vercel.app', 
   credentials:true,            
   optionSuccessStatus:200
 }
