@@ -21,6 +21,7 @@ const loginUser = async(req, res, next) => {
     name: user.name,
     last_name: user.last_name,
     email: user.email_user,
+    prepaid: user.prepaid_id,
   }
 
   try {
