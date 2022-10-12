@@ -1,6 +1,15 @@
+const { validationResult } = require('express-validator');
 const pool = require('../db');
 
 const newTurn = async (req, res, next) => {
+
+  const errors = validationResult( req );
+
+  if (!errors.isEmpty()) {
+    return res.status(400).json({
+      errors: errors.array()
+    });
+  }
 
 try {
   const { user_id, prof_id, prepaid_id, place_id, payment_id, hour, date, treatment } = req.body

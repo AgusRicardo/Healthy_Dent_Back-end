@@ -14,16 +14,22 @@ const loginRoutes  = require('./routes/login.routes');
 const logoutRoutes = require('./routes/logout.routes');
 const professionalListRoutes = require('./routes/professionalList.routes');
 const getUserId = require('./routes/getUserId.routes');
-const createTurn = require('./routes/turn.routes')
+const createTurn = require('./routes/turn.routes');
+const deleteUser = require('./routes/deleteUser.routes');
 const PORT = process.env.PORT; 
 
 const app = express();
 
+const corsOptions ={
+  origin:'http://localhost:3000' || 'https://client-agustinricardo1.vercel.app/', 
+  credentials:true,            
+  optionSuccessStatus:200
+}
 
 // Middlewares
 app.use(morgan('dev'));
-app.use(cors());
-app.use(express.static(join(__dirname, '../client/build')))
+app.use(cors(corsOptions));
+// app.use(express.static(join(__dirname, '../client/build')))
 app.use(express.json());
 app.use(cookieParser())
 app.use(passport.initialize())
@@ -37,6 +43,7 @@ app.use(logoutRoutes)
 app.use(professionalListRoutes)
 app.use(getUserId)
 app.use(createTurn)
+app.use(deleteUser)
 
 
 // Erros
