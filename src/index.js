@@ -21,7 +21,8 @@ const PORT = process.env.PORT;
 const app = express();
 
 const corsOptions ={
-  origin:'http://localhost:3000' || 'https://client-agustinricardo1.vercel.app/', 
+  // origin:'http://localhost:3000', 
+  origin:'https://client-agustinricardo1.vercel.app/', 
   credentials:true,            
   optionSuccessStatus:200
 }
