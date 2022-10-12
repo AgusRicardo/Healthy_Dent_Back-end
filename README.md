@@ -11,4 +11,6 @@ BD: PostgreSQL
 <br/>
 Server: ElephantSQL
 <br/>
+Hosting: Fly.io
+<br/>
 <b>Integrantes: Agustín Ricardo, Nehuen Bovyn, Ariadna Garcia, Marcos Aguero</b>
