@@ -9,7 +9,7 @@ const loginUser = async(req, res, next) => {
   let user = req.user
 
   const errors = validationResult( req );
-
+  console.log(user)
   if (!errors.isEmpty()) {
     return res.status(400).json({
       errors: errors.array()

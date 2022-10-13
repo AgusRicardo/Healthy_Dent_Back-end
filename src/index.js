@@ -15,6 +15,8 @@ const logoutRoutes = require('./routes/logout.routes');
 const professionalListRoutes = require('./routes/professionalList.routes');
 const getUserId = require('./routes/getUserId.routes');
 const createTurn = require('./routes/turn.routes');
+const getPrepaid = require('./routes/getPrepaid.routes')
+const getTurn = require('./routes/getTurn.routes')
 const PORT = process.env.PORT; 
 
 const app = express();
@@ -42,6 +44,8 @@ app.use(logoutRoutes)
 app.use(professionalListRoutes)
 app.use(getUserId)
 app.use(createTurn)
+app.use(getPrepaid)
+app.use(getTurn)
 
 
 // Erros
