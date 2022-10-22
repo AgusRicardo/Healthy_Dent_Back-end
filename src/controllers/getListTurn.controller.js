@@ -10,6 +10,7 @@ try {
                                     ,ur.last_name
                                       , t.date
                                       , t.hour 
+                                      , t.treatment
                                   FROM "User" AS us
                                   LEFT JOIN "Turn" AS t 
                                   ON us.user_id = t.user_id
