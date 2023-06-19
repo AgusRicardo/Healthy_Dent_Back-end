@@ -18,13 +18,14 @@ const createTurn = require('./routes/turn.routes');
 const getPrepaid = require('./routes/getPrepaid.routes')
 const getTurn = require('./routes/getTurn.routes')
 const getPlaceProf = require('./routes/placeProfessional.routes')
+const getLastUser = require('./routes/getProfessionalUserId.routes')
 const PORT = process.env.PORT; 
 
 const app = express();
 
 const corsOptions ={
-  //origin:'http://localhost:3000', 
-  origin:'https://healthydent.vercel.app', 
+  origin:'http://localhost:3000', 
+  //origin:'https://healthydent.vercel.app', 
   credentials:true,            
   optionSuccessStatus:200
 }
@@ -48,6 +49,7 @@ app.use(createTurn)
 app.use(getPrepaid)
 app.use(getTurn)
 app.use(getPlaceProf)
+app.use(getLastUser)
 
 
 
