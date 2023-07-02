@@ -9,7 +9,6 @@ const loginUser = async(req, res, next) => {
   let user = req.user
 
   const errors = validationResult( req );
-  console.log(user)
   if (!errors.isEmpty()) {
     return res.status(400).json({
       errors: errors.array()
@@ -22,6 +21,7 @@ const loginUser = async(req, res, next) => {
     last_name: user.last_name,
     email: user.email_user,
     prepaid: user.prepaid_id,
+    tipo: "Paciente"
   }
 
   try {
