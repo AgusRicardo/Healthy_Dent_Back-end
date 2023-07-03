@@ -4,9 +4,10 @@ const { validationResult } = require('express-validator')
 
 
 
-const loginUser = async(req, res, next) => {
+const loginProfessional = async(req, res, next) => {
   const SECRET = pool.options.secret;
   let user = req.user
+  let professional = req.profExist
 
   const errors = validationResult( req );
   if (!errors.isEmpty()) {
@@ -21,7 +22,10 @@ const loginUser = async(req, res, next) => {
     last_name: user.last_name,
     email: user.email_user,
     prepaid: user.prepaid_id,
-    tipo: "Paciente"
+    tipo: "Profesional",
+    prof_id: professional.prof_id,
+    n_matric: professional.n_matric,
+    specialization: professional.specialization
   }
 
   try {
@@ -41,5 +45,5 @@ const loginUser = async(req, res, next) => {
 };
 
 module.exports = {
-  loginUser
+  loginProfessional
 }
