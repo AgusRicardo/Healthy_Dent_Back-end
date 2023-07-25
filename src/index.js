@@ -5,7 +5,6 @@ const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const { db } = require("./config.js");
 const { join } = require("path");
-
 const createUserRoutes = require("./routes/createUser.routes");
 const createProfessional = require("./routes/createProfessional.routes");
 const loginRoutes = require("./routes/login.routes");
@@ -17,6 +16,7 @@ const getPrepaid = require("./routes/getPrepaid.routes");
 const getTurn = require("./routes/getTurn.routes");
 const getPlaceProf = require("./routes/placeProfessional.routes");
 const loginProfessional = require("./routes/loginProfessional.routes.js");
+const getProfileProfessional = require('./routes/getProfileProfessional.routes.js');
 const PORT = process.env.PORT;
 
 const app = express();
@@ -47,6 +47,7 @@ app.use(getPrepaid);
 app.use(getTurn);
 app.use(getPlaceProf);
 app.use(loginProfessional);
+app.use(getProfileProfessional);
 
 // Erros
 app.use((err, req, res, next) => {
