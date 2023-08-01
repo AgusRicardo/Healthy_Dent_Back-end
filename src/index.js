@@ -17,6 +17,8 @@ const getTurn = require("./routes/getTurn.routes");
 const getPlaceProf = require("./routes/placeProfessional.routes");
 const loginProfessional = require("./routes/loginProfessional.routes.js");
 const getProfileProfessional = require('./routes/getProfileProfessional.routes.js');
+const totalPatient = require('./routes/TotalPatient.routes.js');
+const totalTurn = require('./routes/TotalTurn.routes.js');
 const PORT = process.env.PORT;
 
 const app = express();
@@ -48,6 +50,8 @@ app.use(getTurn);
 app.use(getPlaceProf);
 app.use(loginProfessional);
 app.use(getProfileProfessional);
+app.use(totalPatient);
+app.use(totalTurn);
 
 // Erros
 app.use((err, req, res, next) => {
