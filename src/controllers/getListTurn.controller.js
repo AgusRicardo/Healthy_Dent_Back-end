@@ -18,7 +18,9 @@ try {
                                   ON p.prof_id = t.prof_id
                                   LEFT JOIN "User" AS ur
                                   ON ur.user_id = p.user_id 
-                                  WHERE us.user_id = $1`,[id])
+                                  WHERE us.user_id = $1
+                                  AND t.date >= CURRENT_DATE
+                                  ORDER BY t.date ASC, t.hour ASC`,[id])
   if(result.rows.length === 0){
     return res.status(404).json({
       message: "No hay turnos",
