@@ -19,6 +19,7 @@ const loginProfessional = require("./routes/loginProfessional.routes.js");
 const getProfileProfessional = require('./routes/getProfileProfessional.routes.js');
 const totalPatient = require('./routes/TotalPatient.routes.js');
 const totalTurn = require('./routes/TotalTurn.routes.js');
+const editProfile = require('./routes/editProfile.routes.js');
 const PORT = process.env.PORT;
 
 const app = express();
@@ -52,6 +53,7 @@ app.use(loginProfessional);
 app.use(getProfileProfessional);
 app.use(totalPatient);
 app.use(totalTurn);
+app.use(editProfile);
 
 // Erros
 app.use((err, req, res, next) => {
