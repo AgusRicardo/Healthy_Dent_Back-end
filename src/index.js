@@ -21,7 +21,7 @@ const totalPatient = require('./routes/TotalPatient.routes.js');
 const totalTurn = require('./routes/TotalTurn.routes.js');
 const editProfile = require('./routes/editProfile.routes.js');
 const PORT = process.env.PORT;
-
+const getAgenda = require('./routes/getAgenda.routes.js');
 const app = express();
 
 const corsOptions = {
@@ -54,7 +54,7 @@ app.use(getProfileProfessional);
 app.use(totalPatient);
 app.use(totalTurn);
 app.use(editProfile);
-
+app.use(getAgenda);
 // Erros
 app.use((err, req, res, next) => {
   return res.json({
