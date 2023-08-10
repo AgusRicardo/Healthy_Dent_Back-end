@@ -1,10 +1,10 @@
 const { Router } = require('express');
-const { getAllTurnsProf } = require('../controllers/getAllTurnsProf.controller');
+const { getAllTurns } = require('../controllers/getAllTurnsProf.controller');
 
 
 const router = Router();
 
-router.get('/allturnos/:id', getAllTurnsProf)
+router.get('/allturnos/:id', getAllTurns)
 
 
 module.exports = router;

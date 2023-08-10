@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
-const { createProfessional } = require('../controllers/createProfessional.controller.');
+const { createProfessional } = require('../controllers/createProfessional.controller');
 const { professionalExists } = require('../validator/professionalExists');
 
 const router = Router();
