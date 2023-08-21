@@ -22,7 +22,8 @@ const totalTurn = require('./routes/TotalTurn.routes.js');
 const editProfile = require('./routes/editProfile.routes.js');
 const PORT = process.env.PORT;
 const getAgenda = require('./routes/getAgenda.routes.js');
-const getAllTurnsProf = require('./routes/getAllTurnProf.routes.js')
+const getAllTurnsProf = require('./routes/getAllTurnProf.routes.js');
+const getLastUserId = require('./routes/getProfessionalUserId.routes.js');
 const app = express();
 
 const corsOptions = {
@@ -57,6 +58,8 @@ app.use(totalTurn);
 app.use(editProfile);
 app.use(getAgenda);
 app.use(getAllTurnsProf);
+app.use(getLastUserId);
+
 // Erros
 app.use((err, req, res, next) => {
   return res.json({
