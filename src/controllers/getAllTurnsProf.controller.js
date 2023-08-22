@@ -8,7 +8,8 @@ try {
   const result = await pool.query(`select tu.turn_id, tu.treatment, tu.date, tu.hour, u.name, u.last_name, tu.prof_id, tu.user_id  from "Turn" as tu
                                    inner join "User" as u 
                                    on tu.user_id = u.user_id
-                                   where tu.prof_id =  $1;`,[id])
+                                   where tu.prof_id =  $1 
+                                   AND DATE(t.date) = CURRENT_DATE;`,[id])
   if(result.rows.length === 0){
     return res.status(404).json({
       message: "No hay turnos",
