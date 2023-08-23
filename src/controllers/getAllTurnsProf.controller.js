@@ -9,7 +9,7 @@ try {
                                    inner join "User" as u 
                                    on tu.user_id = u.user_id
                                    where tu.prof_id =  $1 
-                                   AND DATE(t.date) = CURRENT_DATE;`,[id])
+                                   AND DATE(tu.date) = CURRENT_DATE;`,[id])
   if(result.rows.length === 0){
     return res.status(404).json({
       message: "No hay turnos",
