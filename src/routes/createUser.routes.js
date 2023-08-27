@@ -9,7 +9,7 @@ router.post(
   '/register',
   [
     check('email_user', 'El email es obligatorio').isEmail(),
-    check('password', 'El password debe tener como mínimo 6 caracteres').isLength({ min: 6 }).withMessage('El password debe tener como mínimo 6 caracteres'),
+    check('password', 'La contraseña debe tener como mínimo 6 caracteres').isLength({ min: 6 }).withMessage('La contraseña debe tener como mínimo 6 caracteres'),
     check('dni', 'El dni es obligatorio').isNumeric()
   ] 
   , 
