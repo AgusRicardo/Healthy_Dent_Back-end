@@ -2,10 +2,9 @@ const pool = require('../db');
 
 const getAllProfessional = async (req, res, next) => {
   try {
-    const allProfessional = await pool.query(`SELECT 
-                                                name
+    const allProfessional = await pool.query(`SELECT
+                                                CONCAT(name, ' ', last_name) AS name
                                                 ,p.prof_id
-                                                ,last_name
                                                 ,n_matric
                                                 ,specialization
                                               FROM "User" as u
