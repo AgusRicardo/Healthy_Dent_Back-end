@@ -32,7 +32,7 @@ const corsOptions = {
   credentials: true,
   optionSuccessStatus: 200,
 };
-console.log(db);
+
 // Middlewares
 app.use(morgan('dev'));
 app.use(cors(corsOptions));
