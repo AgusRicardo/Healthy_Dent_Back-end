@@ -24,6 +24,7 @@ const PORT = process.env.PORT;
 const getAgenda = require('./routes/getAgenda.routes.js');
 const getAllTurnsProf = require('./routes/getAllTurnProf.routes.js');
 const getLastUserId = require('./routes/getProfessionalUserId.routes.js');
+const getAttachment = require('./routes/getAttachment.routes.js');
 const app = express();
 
 const corsOptions = {
@@ -59,6 +60,7 @@ app.use(editProfile);
 app.use(getAgenda);
 app.use(getAllTurnsProf);
 app.use(getLastUserId);
+app.use(getAttachment);
 
 // Erros
 app.use((err, req, res, next) => {
