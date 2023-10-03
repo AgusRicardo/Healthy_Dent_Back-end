@@ -26,6 +26,7 @@ const getAllTurnsProf = require('./routes/getAllTurnProf.routes.js');
 const getLastUserId = require('./routes/getProfessionalUserId.routes.js');
 const getAttachment = require('./routes/getAttachment.routes.js');
 const getSpecialization = require('./routes/getSpecialization.routes.js');
+const getAllMyPatient = require('./routes/getAllMyPatient.routes.js');
 
 const app = express();
 
@@ -64,6 +65,7 @@ app.use(getAllTurnsProf);
 app.use(getLastUserId);
 app.use(getAttachment);
 app.use(getSpecialization);
+app.use(getAllMyPatient);
 
 // Erros
 app.use((err, req, res, next) => {
