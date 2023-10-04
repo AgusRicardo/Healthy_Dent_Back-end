@@ -4,7 +4,7 @@ const { assignTurn } = require('../controllers/assignTurn.controller');
 
 const router = Router();
 
-router.post(
+router.put(
   '/assignturn',
   [
     check('user_id', 'El ID de usuario es obligatorio'),
