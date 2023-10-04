@@ -5,7 +5,7 @@ const getMyPatient = async (req, res, next) => {
 try {
   const { id } = req.params
   
-  const result = await pool.query(`SELECT u.dni, CONCAT(u.name, ' ', u.last_name) AS name FROM "Turn" t
+  const result = await pool.query(`SELECT DISTINCT(u.dni), CONCAT(u.name, ' ', u.last_name) AS name FROM "Turn" t
                                    INNER JOIN "User" u
                                    ON u.user_id = t.user_id
                                    WHERE t.prof_id = $1`,[id])
