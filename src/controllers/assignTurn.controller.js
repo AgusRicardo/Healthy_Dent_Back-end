@@ -29,7 +29,6 @@ const assignTurn = async (req, res, next) => {
     });
   } catch (error) {
     next(error);
-    console.error(error.message);
     return res.status(500).json({
       error: error.message,
     });

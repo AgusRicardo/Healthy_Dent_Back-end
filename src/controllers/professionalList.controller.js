@@ -22,8 +22,6 @@ const getAllProfessional = async (req, res, next) => {
 
 const getProfessional = async (req, res) => {
   res.send('User ID ' + req.params.id)
-  // const result = await pool.query('SELECT * FROM "User"');
-  // res.json(result.rows[0].now);
 };
 
 module.exports = {

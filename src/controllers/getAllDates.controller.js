@@ -12,16 +12,16 @@ try {
                                         , availability
                                     FROM "Turn"
                                     WHERE prof_id = $1
-                                    AND (availability = true OR availability IS NULL)`,[id])
+                                    AND (availability = true OR availability IS NULL)
+                                    ORDER BY date ASC, hour;`,[id])
   if(result.rows.length === 0){
-    return res.status(404).json({
+    return res.json({
       message: "No hay horarios disponibles",
     })
   }
   res.json(result.rows);
 } catch (error) {
   next(error)
-  console.log(error.message)
   return res.status(500).json({
     error: error.message,
   })
