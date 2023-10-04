@@ -11,7 +11,8 @@ try {
                                         , date
                                         , availability
                                     FROM "Turn"
-                                    WHERE prof_id = $1`,[id])
+                                    WHERE prof_id = $1
+                                    AND (availability = true OR availability IS NULL)`,[id])
   if(result.rows.length === 0){
     return res.status(404).json({
       message: "No hay horarios disponibles",
