@@ -30,7 +30,6 @@ passport.use(
 
       return await done(null, user)
     } catch (error) {
-      console.log(error.message)
       done(null, false)
     }
   })

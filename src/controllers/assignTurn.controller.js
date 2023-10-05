@@ -2,19 +2,20 @@ const pool = require('../db');
 
 const assignTurn = async (req, res, next) => {
   try {
-    const { user_id, prof_id, prepaid_id, treatment, date, hour } = req.body;
-
+    const { user_id, prof_id, prepaid_id, treatment, date, hour, place_id } = req.body;
+    
     const result = await pool.query(
       `UPDATE "Turn" 
       SET user_id = $1
         , prepaid_id = $2
         , treatment = $3
+        , place_id = $7
         , availability = false
       WHERE prof_id = $4 
       AND date = $5
       AND hour = $6
       AND (availability = true OR availability IS NULL);`,
-      [user_id, prepaid_id, treatment, prof_id, date, hour]
+      [user_id, prepaid_id, treatment, prof_id, date, hour, place_id]
     );
 
     if (result.rowCount === 0) {

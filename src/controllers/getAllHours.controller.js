@@ -1,18 +1,18 @@
 const pool = require('../db');
 
-const getAllDates = async (req, res, next) => {
+const getAllHours = async (req, res, next) => {
 
 try {
-  const { id } = req.params
-  
-  const result = await pool.query(`SELECT distinct(date)
-	,prof_id
-	, place_id
-	, availability
-	FROM "Turn"
-WHERE prof_id = $1
+  const { prof_id, date } = req.body
+
+  const result = await pool.query(`SELECT hour
+	,place_id 
+	,date
+	,availability
+	FROM "Turn" t
+WHERE prof_id = $1 and t.date = $2
 	AND (availability = true OR availability IS NULL)
-ORDER BY date ASC;`,[id])
+ORDER BY hour asc;`,[prof_id, date])
   if(result.rows.length === 0){
     return res.json({
       message: "No hay horarios disponibles",
@@ -28,5 +28,5 @@ ORDER BY date ASC;`,[id])
 };
 
 module.exports = {
-    getAllDates
+  getAllHours
 };

@@ -29,6 +29,7 @@ const getSpecialization = require('./routes/getSpecialization.routes.js');
 const getAllMyPatient = require('./routes/getAllMyPatient.routes.js');
 const getAllDates =  require('./routes/getAllDates.routes.js');
 const assignTurn = require('./routes/assignTurn.routes.js');
+const getAllHours = require('./routes/getAllHours.routes.js');
 
 const app = express();
 
@@ -70,6 +71,7 @@ app.use(getSpecialization);
 app.use(getAllMyPatient);
 app.use(getAllDates);
 app.use(assignTurn);
+app.use(getAllHours);
 
 // Erros
 app.use((err, req, res, next) => {
