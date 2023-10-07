@@ -30,7 +30,7 @@ const getAllMyPatient = require('./routes/getAllMyPatient.routes.js');
 const getAllDates =  require('./routes/getAllDates.routes.js');
 const assignTurn = require('./routes/assignTurn.routes.js');
 const getAllHours = require('./routes/getAllHours.routes.js');
-
+const createHoursDateProf=require('./routes/createHoursDateProf.routes.js')
 const app = express();
 
 const corsOptions = {
@@ -72,6 +72,7 @@ app.use(getAllMyPatient);
 app.use(getAllDates);
 app.use(assignTurn);
 app.use(getAllHours);
+app.use(createHoursDateProf);
 
 // Erros
 app.use((err, req, res, next) => {
