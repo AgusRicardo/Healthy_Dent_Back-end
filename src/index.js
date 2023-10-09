@@ -31,6 +31,7 @@ const getAllDates =  require('./routes/getAllDates.routes.js');
 const assignTurn = require('./routes/assignTurn.routes.js');
 const getAllHours = require('./routes/getAllHours.routes.js');
 const createHoursDateProf=require('./routes/createHoursDateProf.routes.js')
+const executeSP = require('./routes/chargeWorkProf.routes.js');
 const app = express();
 
 const corsOptions = {
@@ -73,6 +74,7 @@ app.use(getAllDates);
 app.use(assignTurn);
 app.use(getAllHours);
 app.use(createHoursDateProf);
+app.use(executeSP);
 
 // Erros
 app.use((err, req, res, next) => {
