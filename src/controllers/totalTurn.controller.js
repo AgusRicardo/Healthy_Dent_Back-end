@@ -5,7 +5,7 @@ const getAllTurn = async (req, res, next) => {
 try {
   const { id } = req.params
   
-  const result = await pool.query(`SELECT count(*) FROM "Turn" WHERE prof_id = $1`,[id])
+  const result = await pool.query(`SELECT count(*) FROM "Turn" WHERE prof_id = $1 AND user_id IS NOT NULL`,[id])
   res.json(result.rows);
 } catch (error) {
   next(error)
