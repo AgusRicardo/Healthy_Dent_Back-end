@@ -35,8 +35,8 @@ const executeSP = require('./routes/chargeWorkProf.routes.js');
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:3000",
-  //origin:'https://healthydent.vercel.app',
+  //origin: "http://localhost:3000",
+  origin:'https://healthydent.vercel.app',
   credentials: true,
   optionSuccessStatus: 200,
 };
